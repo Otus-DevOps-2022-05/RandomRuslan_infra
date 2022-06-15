@@ -1,4 +1,4 @@
-name: Auto Assign
+name: Auto Assign Homework
 on: pull_request
 
 jobs:
