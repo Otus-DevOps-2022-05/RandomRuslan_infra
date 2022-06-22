@@ -10,7 +10,7 @@ ssh -i ~/.ssh/appuser -J <BASTION_USER>@<BASTION_SERVER> <INTERNAL_USER>@<INTERN
 ```
 
 Сокращаем до вида `ssh someinternalhost`:
- - Создаем конфиг файл ~/.ssh/config
+ - Создаем конфиг файл `~/.ssh/config`
  - Заполняем следующим кодом:
 ```shell
 Host someinternalhost
@@ -23,3 +23,16 @@ Host someinternalhost
 Чтобы после этого подключаться исключительно по алиасу `someinternalhost`, необходимо:
  - Добавить в файл `~/.zshrc` (для OS X) добавить строку `alias someinternalhost="ssh someinternalhost"`
  - Выполнить `source ~/.zshrc`
+
+## VPN-сервер
+
+Домен по https:
+```shell
+https://84-252-139-85.sslip.io/
+```
+
+Данные для проверки:
+```shell
+bastion_IP = 84.252.139.85
+someinternalhost_IP = 10.129.0.26
+```
