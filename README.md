@@ -36,3 +36,31 @@ https://84-252-139-85.sslip.io/
 bastion_IP = 84.252.139.85
 someinternalhost_IP = 10.129.0.26
 ```
+
+# 6. Основные сервисы Yandex Cloud
+
+Команда создания инстанса:
+```shell
+yc compute instance create \
+ --name reddit-app \
+ --hostname reddit-app \
+ --memory=4 \
+ --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+ --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+ --metadata serial-port-enable=1 \
+ --ssh-key ~/.ssh/appuser.pub \
+ --zone ru-central1-a
+```
+
+Скрипты для запуска приложения:
+ - install_ruby.sh
+ - install_mongodb.sh
+ - deploy.sh
+
+Данные для проверки:
+```shell
+testapp_IP = 51.250.88.98
+testapp_port = 9292
+```
+
+Для проверки необходимо открыть сайт `http://51.250.88.98:9292/`
