@@ -1,0 +1,5 @@
+{
+  "folder_id": "mock",
+  "source_image_id": "mock",
+  "service_account_key_file_path": "../key.json.example"
+}

@@ -1,0 +1,18 @@
+[Unit]
+Description=Reddit
+After=mongodb.service
+Requires=mongodb.service
+
+[Service]
+Type=forking
+PIDFile=/home/ubuntu/tmp/pids/service.pid
+WorkingDirectory=/home/ubuntu/reddit
+
+OOMScoreAdjust=-1000
+
+ExecStart=/usr/local/bin/puma -d
+TimeoutSec=30
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
