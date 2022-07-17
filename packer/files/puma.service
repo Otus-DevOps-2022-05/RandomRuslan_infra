@@ -1,10 +1,12 @@
 [Unit]
-Description=Reddit
+Description=Puma HTTP Server
+After=network.target
 After=mongodb.service
 Requires=mongodb.service
 
 [Service]
 Type=forking
+User=ubuntu
 PIDFile=/home/ubuntu/tmp/pids/service.pid
 WorkingDirectory=/home/ubuntu/reddit
 

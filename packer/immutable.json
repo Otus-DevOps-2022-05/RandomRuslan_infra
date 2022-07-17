@@ -5,7 +5,7 @@
       "service_account_key_file": "{{ user `service_account_key_file_path` }}",
       "folder_id": "{{ user `folder_id` }}",
       "source_image_id": "{{ user `source_image_id` }}",
-      "image_name": "reddit-base-{{timestamp}}",
+      "image_name": "reddit-bake-{{timestamp}}",
       "image_description": "packer test",
       "image_family": "reddit-full",
       "ssh_username": "ubuntu",
@@ -27,8 +27,8 @@
     },
     {
       "type": "file",
-      "source": "files/reddit.service",
-      "destination": "/tmp/reddit.service"
+      "source": "files/puma.service",
+      "destination": "/tmp/puma.service"
     },
     {
       "type": "shell",
