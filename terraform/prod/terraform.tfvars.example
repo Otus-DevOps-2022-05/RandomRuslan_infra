@@ -1,0 +1,10 @@
+cloud_id  = "mock"
+folder_id = "mock"
+image_id  = "mock"
+subnet_id = "mock"
+
+app_disk_image = "mock"
+db_disk_image  = "mock"
+
+private_key_path = "~/.ssh/mock"
+public_key_path  = "~/.ssh/mock.pub"
