@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SVC_ACCT=reddit-packer
+SVC_ACCT=reddit-terraform
 FOLDER_ID=$(yc config get folder-id)
 
 yc iam service-account create --name $SVC_ACCT --folder-id $FOLDER_ID
