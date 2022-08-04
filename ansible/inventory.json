@@ -1,7 +1,0 @@
-#!/bin/bash
-
-cd ../terraform/stage
-APP_IP=$(terraform output -json | jq .external_ip_address_app.value)
-DB_IP=$(terraform output -json | jq .external_ip_address_db.value)
-
-echo "{\"app\": {\"hosts\": [$APP_IP]}, \"db\": {\"hosts\": [$DB_IP]}}"
