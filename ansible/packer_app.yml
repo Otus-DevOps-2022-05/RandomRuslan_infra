@@ -1,18 +1,24 @@
 - name: Install ruby
 
-  hosts: 127.0.0.1
+  hosts: all
   become: true
 
   tasks:
 
-    - name: ruby-full
+    - name: Update APT Cache
       apt:
-        name: ruby-full
+        update_cache: yes
+        force_apt_get: yes
 
-    - name: ruby-bundler
-      apt:
-        name: ruby-bundler
+    - name: Remove apt lock file
+      file:
+        state: absent
+        path: "/var/lib/dpkg/lock"
 
-    - name: build-essential
+    - name: install packages
       apt:
-        name: build-essential
+        name: "{{ item }}"
+      with_items:
+        - ruby-full
+        - ruby-bundler
+        - build-essential
