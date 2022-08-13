@@ -1,0 +1,18 @@
+- name: Install ruby
+
+  hosts: 127.0.0.1
+  become: true
+
+  tasks:
+
+    - name: ruby-full
+      apt:
+        name: ruby-full
+
+    - name: ruby-bundler
+      apt:
+        name: ruby-bundler
+
+    - name: build-essential
+      apt:
+        name: build-essential
