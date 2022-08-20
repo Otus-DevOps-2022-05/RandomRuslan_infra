@@ -2,7 +2,7 @@
   hosts: all
   vars:
     mongo_bind_ip: 0.0.0.0
-    db_host: 192.168.10.4 # internal_ip_address_db
+    db_host: 192.168.10.6 # internal_ip_address_db
 
   tasks:
     - name: Change mongo config file

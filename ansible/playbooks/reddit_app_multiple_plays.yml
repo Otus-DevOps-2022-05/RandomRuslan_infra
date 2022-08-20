@@ -27,7 +27,7 @@
   become: true
   tags: app-tag
   vars:
-    db_host: 192.168.10.4 # internal_ip_address_db
+    db_host: 192.168.10.6 # internal_ip_address_db
 
   tasks:
 
