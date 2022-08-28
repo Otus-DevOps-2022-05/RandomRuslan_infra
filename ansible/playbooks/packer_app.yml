@@ -3,22 +3,25 @@
   hosts: all
   become: true
 
-  tasks:
+  roles:
+    - app
 
-    - name: Update APT Cache
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-
-    - name: Remove apt lock file
-      file:
-        state: absent
-        path: "/var/lib/dpkg/lock"
-
-    - name: install packages
-      apt:
-        name: "{{ item }}"
-      with_items:
-        - ruby-full
-        - ruby-bundler
-        - build-essential
+#  tasks:
+#
+#    - name: Update APT Cache
+#      apt:
+#        update_cache: yes
+#        force_apt_get: yes
+#
+#    - name: Remove apt lock file
+#      file:
+#        state: absent
+#        path: "/var/lib/dpkg/lock"
+#
+#    - name: install packages
+#      apt:
+#        name: "{{ item }}"
+#      with_items:
+#        - ruby-full
+#        - ruby-bundler
+#        - build-essential
