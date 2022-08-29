@@ -3,16 +3,19 @@
   hosts: all
   become: true
 
-  tasks:
+  roles:
+    - db
 
-    - name: mongodb
-      apt:
-        name: mongodb
-
-    - name: start mongodb
-      service: name=mongodb state=started
-
-    - name: enable mongodb
-      service:
-        name: mongodb
-        enabled: yes
+#  tasks:
+#
+#    - name: mongodb
+#      apt:
+#        name: mongodb
+#
+#    - name: start mongodb
+#      service: name=mongodb state=started
+#
+#    - name: enable mongodb
+#      service:
+#        name: mongodb
+#        enabled: yes
